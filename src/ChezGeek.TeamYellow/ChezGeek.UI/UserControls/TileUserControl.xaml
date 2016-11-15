@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="ChezGeek.UI.UserControls.TileUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:converters="clr-namespace:ChezGeek.UI.UserControls.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="60" d:DesignWidth="60">
+    <UserControl.Resources>
+        <converters:TileColorConverter x:Key="TileColorConverter" />
+        <converters:PieceToImageConverter x:Key="PieceToImageConverter" />
+        <BitmapImage x:Key="LastMoveOverlay" UriSource="../Resources/Images/selected.png"/>
+    </UserControl.Resources>
+
+    <Grid Background="{Binding TileColor, Converter={StaticResource TileColorConverter}}">
+        <Image
+            Width="60"
+            Height="60"
+            Opacity="{Binding OverlayOpacity, UpdateSourceTrigger=PropertyChanged}"
+            Source="{StaticResource LastMoveOverlay}"
+            />
+        <Image
+            Width="40"
+            Height="40"
+            Source="{Binding Piece, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource PieceToImageConverter}}" />
+
+        <Label 
+            Content="{Binding Number, UpdateSourceTrigger=PropertyChanged}" 
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Left"
+            FontSize="8"
+            Margin="40,0,0,0"
+            Foreground="Gray" RenderTransformOrigin="1.818,0.391" />
+    </Grid>
+</UserControl>
