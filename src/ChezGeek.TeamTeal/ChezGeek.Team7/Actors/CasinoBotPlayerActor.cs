@@ -63,7 +63,7 @@ namespace ChezGeek.TeamTeal.Actors
                 var firstGen2Evaluations = legalStateMovesGen1ToGen2.ToDictionary(x => x.Key,
                     x => _chessCalculationsService.GetBestPlans(x.Value, state.MoveHistory.Count).GetRandomItem(_random));
 
-                if (stopwatch.Elapsed.TotalSeconds > timeLimitSeconds || state.MoveHistory.Count <= 100)
+                if (stopwatch.Elapsed.TotalSeconds > timeLimitSeconds || state.MoveHistory.Count <= 101)
                     return ReturnBestMove(legalStateMovesGen1, firstGen2Evaluations, state.MoveHistory.Count);
 
                 // 3 PLY

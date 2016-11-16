@@ -5,6 +5,7 @@ using ChezGeek.Common.Attributes;
 using ChezGeek.Common.Messages;
 using Geek2k16.Service;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -66,12 +67,14 @@ namespace ChezGeek.Common.Test
                 GetPlayerName(_whitePlayerType),
                 GetPlayerName(_blackPlayerType));
 
+            var runningGames = new List<Task>();
             for (var run = 0; run < _numberOfRuns; run++)
             {
-                await RunScenarioAsync(run, testSummary).ConfigureAwait(false);
+                runningGames.Add(RunScenarioAsync(run, testSummary));
                 Console.WriteLine($"Ran {run+1} of {_numberOfRuns} games.");
             }
 
+            await Task.WhenAll(runningGames);
             _output.WriteLine(testSummary.ToString());
         }
 
