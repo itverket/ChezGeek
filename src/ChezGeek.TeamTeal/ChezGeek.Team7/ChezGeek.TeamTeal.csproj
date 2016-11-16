@@ -85,8 +85,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Actors\CasinoBotPlayerActor.cs" />
-    <Compile Include="Actors\CasinoWorkerActor.cs" />
+    <Compile Include="Actors\CasinoBot - 2ply\CasinoBotPlayerActor.cs" />
+    <Compile Include="Actors\CasinoBot - 2ply\CasinoWorkerActor.cs" />
+    <Compile Include="Actors\CasinoBot\CasinoBotPlayerActor.cs" />
+    <Compile Include="Actors\CasinoBot\CasinoWorkerActor.cs" />
     <Compile Include="ChessCalculationsService.cs" />
     <Compile Include="IAmAChessPlayer.cs" />
     <Compile Include="ITeamTealAssembly.cs" />

@@ -11,12 +11,12 @@ using ChezGeek.Common.Messages;
 using Geek2k16.Entities.Enums;
 using Geek2k16.Entities.Structs;
 
-namespace ChezGeek.TeamTeal.Actors
+namespace ChezGeek.TeamTeal.Actors.CasinoBot
 {
     [ChessPlayer("casino.bot")]
     public class CasinosActor : ReceiveActor
     {
-        private const int NumberOfWorkerActors = 30;
+        private const int NumberOfWorkerActors = 5;
         private const int NumberOfActorsPerNode = 4;
         private const int DivideRemainingTimeBy = 30;
         private readonly ChessCalculationsService _chessCalculationsService;
@@ -63,7 +63,7 @@ namespace ChezGeek.TeamTeal.Actors
                 var firstGen2Evaluations = legalStateMovesGen1ToGen2.ToDictionary(x => x.Key,
                     x => _chessCalculationsService.GetBestPlans(x.Value, state.MoveHistory.Count).GetRandomItem(_random));
 
-                if (stopwatch.Elapsed.TotalSeconds > timeLimitSeconds || state.MoveHistory.Count <= 101)
+                if (stopwatch.Elapsed.TotalSeconds > timeLimitSeconds || state.MoveHistory.Count <= 10)
                     return ReturnBestMove(legalStateMovesGen1, firstGen2Evaluations, state.MoveHistory.Count);
 
                 // 3 PLY
@@ -78,7 +78,7 @@ namespace ChezGeek.TeamTeal.Actors
 
                 var secondGen2Evaluations = answers.ToDictionary(x => x.StateAndMove, x => x.MovePlan);
 
-                if (stopwatch.Elapsed.TotalSeconds > timeLimitSeconds)
+                if (stopwatch.Elapsed.TotalSeconds > timeLimitSeconds || state.MoveHistory.Count <= 1001)
                     return ReturnBestMove(legalStateMovesGen1, secondGen2Evaluations, state.MoveHistory.Count);
 
                 // 4 PLY

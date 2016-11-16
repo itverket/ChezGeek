@@ -16,8 +16,8 @@ namespace ChessMatchRunner
             using (var writer = new StreamWriter($"Results\\GameResults-{gameId}.txt"))
             {
                 var aviablePlayers = ChessPlayerHelper.GetPlayers().ToList();
-                Console.WriteLine($"Starting match with players: {aviablePlayers[0]} vs {aviablePlayers[0]}");
-                var gameRunner = new ChessGameTestScenario(aviablePlayers[0], aviablePlayers[0], writer, 3, true);
+                Console.WriteLine($"Starting match with players: {aviablePlayers[0]} vs {aviablePlayers[1]}");
+                var gameRunner = new ChessGameTestScenario(aviablePlayers[0], aviablePlayers[1], writer, 3, true);
                 var runningGames = gameRunner.RunAsync();
                 Task.WaitAll(runningGames);
             }

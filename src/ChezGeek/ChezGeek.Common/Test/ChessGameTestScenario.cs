@@ -5,8 +5,8 @@ using ChezGeek.Common.Attributes;
 using ChezGeek.Common.Messages;
 using Geek2k16.Service;
 using System;
-using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,14 +67,12 @@ namespace ChezGeek.Common.Test
                 GetPlayerName(_whitePlayerType),
                 GetPlayerName(_blackPlayerType));
 
-            var runningGames = new List<Task>();
             for (var run = 0; run < _numberOfRuns; run++)
             {
-                runningGames.Add(RunScenarioAsync(run, testSummary));
+                await RunScenarioAsync(run, testSummary).ConfigureAwait(false);
                 Console.WriteLine($"Ran {run+1} of {_numberOfRuns} games.");
             }
 
-            await Task.WhenAll(runningGames);
             _output.WriteLine(testSummary.ToString());
         }
 
@@ -95,8 +93,10 @@ namespace ChezGeek.Common.Test
             while (!state.EndResult.HasValue)
             {
                 var gameStateAnswer = await boardActor.Ask<GetNextGameStateAnswer>(new GetNextGameStateQuestion()).ConfigureAwait(false);
-
                 state = gameStateAnswer.ChessBoardState.ChessBoardState;
+                Console.WriteLine(Math.Ceiling(state.MoveHistory.Count / 2.0));
+                Console.WriteLine(state.ChessGrid.ToString());
+                Console.WriteLine(Environment.NewLine);
             }
 
             //if (_verbose)
