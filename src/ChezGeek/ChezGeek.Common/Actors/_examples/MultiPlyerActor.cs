@@ -18,7 +18,7 @@ namespace ChezGeek.Common.Actors._examples
     public class MultiPlyerActor : ReceiveActor
     {
         private const int NumberOfWorkerActors = 8;
-        private const int NumberOfActorsPerNode = 2;
+        private const int NumberOfActorsPerNode = 6;
         private readonly ChessCalculationsService _chessCalculationsService;
         private readonly Random _random;
         private readonly IActorRef _workerRouter;

@@ -4,18 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0BB06D34-7CEA-4A2D-915D-EF2702A5D75F}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{92B0E5EC-F138-4A65-9AF3-EEAD8A98A4A1}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ChezGeek.TeamTeal</RootNamespace>
-    <AssemblyName>ChezGeek.TeamTeal</AssemblyName>
+    <RootNamespace>ChessMatchRunner</RootNamespace>
+    <AssemblyName>ChessMatchRunner</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,38 +32,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Akka, Version=1.1.1.27, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Akka.1.1.1\lib\net45\Akka.dll</HintPath>
+    <Reference Include="Akka, Version=1.1.2.29, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Akka.1.1.2\lib\net45\Akka.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ChezGeek.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\ChezGeek.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Geek2k16.Entities">
-      <HintPath>..\lib\Geek2k16.Entities.dll</HintPath>
-    </Reference>
-    <Reference Include="Geek2k16.Service">
-      <HintPath>..\lib\Geek2k16.Service.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.ProtocolBuffers, Version=2.4.1.555, Culture=neutral, PublicKeyToken=55f7125234beb589, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.ProtocolBuffers.2.4.1.555\lib\net40\Google.ProtocolBuffers.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Google.ProtocolBuffers.Serialization, Version=2.4.1.555, Culture=neutral, PublicKeyToken=55f7125234beb589, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.ProtocolBuffers.2.4.1.555\lib\net40\Google.ProtocolBuffers.Serialization.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Helios, Version=2.1.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Helios.2.1.2\lib\net45\Helios.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -82,18 +53,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Actors\CasinoBotPlayerActor.cs" />
-    <Compile Include="Actors\CasinoWorkerActor.cs" />
-    <Compile Include="ChessCalculationsService.cs" />
-    <Compile Include="IAmAChessPlayer.cs" />
-    <Compile Include="ITeamTealAssembly.cs" />
-    <Compile Include="Messages\EvaluateMove.cs" />
-    <Compile Include="Messages\MoveEvaluated.cs" />
-    <Compile Include="PhasesEvaluator.cs" />
-    <Compile Include="PieceEvaluator.cs" />
+    <Compile Include="ChessPlayerHelper.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -101,11 +64,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <ProjectReference Include="..\ChezGeek.Common\ChezGeek.Common.csproj">
+      <Project>{49b13752-de2f-42df-83ff-6b25e3ee587c}</Project>
+      <Name>ChezGeek.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetDir)$(ProjectName).dll" "$(SolutionDir)..\..\out\$(ProjectName).dll"</PostBuildEvent>
+    <PostBuildEvent>copy /Y "$(TargetDir)*.*" "$(SolutionDir)..\..\out\"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

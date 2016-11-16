@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Akka.Actor;
-using Akka.Cluster.Routing;
 using Akka.Routing;
 using ChezGeek.Common.Actors._examples;
 using ChezGeek.Common.Attributes;
@@ -28,11 +27,11 @@ namespace ChezGeek.TeamTeal.Actors
         {
             _chessCalculationsService = new ChessCalculationsService();
             ReceiveAsync<GetNextMoveQuestion>(async question => Sender.Tell(await GetBestMove(question), Self));
-            //_workerRouter = Context.ActorOf(Props.Create<CasinoWorkerActor>()
-            //    .WithRouter(new RoundRobinPool(NumberOfActorsPerNode)));
             _workerRouter = Context.ActorOf(Props.Create<CasinoWorkerActor>()
-                .WithRouter(new ClusterRouterPool(new RoundRobinPool(NumberOfWorkerActors),
-                    new ClusterRouterPoolSettings(NumberOfWorkerActors, NumberOfActorsPerNode, false, "node"))));
+                .WithRouter(new RoundRobinPool(NumberOfActorsPerNode)));
+            //_workerRouter = Context.ActorOf(Props.Create<CasinoWorkerActor>()
+            //    .WithRouter(new ClusterRouterPool(new RoundRobinPool(NumberOfWorkerActors),
+            //        new ClusterRouterPoolSettings(NumberOfWorkerActors, NumberOfActorsPerNode, false, "node"))));
         }
 
         private async Task<GetNextMoveAnswer> GetBestMove(GetNextMoveQuestion getNextMoveQuestion)

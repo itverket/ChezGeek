@@ -69,6 +69,7 @@ namespace ChezGeek.Common.Test
             for (var run = 0; run < _numberOfRuns; run++)
             {
                 await RunScenarioAsync(run, testSummary).ConfigureAwait(false);
+                Console.WriteLine($"Ran {run+1} of {_numberOfRuns} games.");
             }
 
             _output.WriteLine(testSummary.ToString());
@@ -79,11 +80,11 @@ namespace ChezGeek.Common.Test
             var boardActor = _actorSystem.ActorOf(
                 Props.Create(() => new BoardActor(_whitePlayerType, _blackPlayerType)));
 
-            if (_verbose)
-            {
-                _output.WriteLine($"Game {run}");
-                _output.WriteLine();
-            }
+            //if (_verbose)
+            //{
+            //    _output.WriteLine($"Game {run}");
+            //    _output.WriteLine();
+            //}
 
             var initialStateAnswer = await boardActor.Ask<GetInitialGameStateAnswer>(new GetInitialGameStateQuestion()).ConfigureAwait(false);
             var state = initialStateAnswer.InitialChessBoardState.ChessBoardState;
@@ -95,10 +96,10 @@ namespace ChezGeek.Common.Test
                 state = gameStateAnswer.ChessBoardState.ChessBoardState;
             }
 
-            if (_verbose)
-            {
-                OutputGameSummary(testSummary, state);
-            }
+            //if (_verbose)
+            //{
+            //    OutputGameSummary(testSummary, state);
+            //}
 
             UpdateTestSummary(state, testSummary);
 
