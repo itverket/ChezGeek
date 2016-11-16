@@ -13,11 +13,11 @@ namespace ChessMatchRunner
         static void Main(string[] args)
         {
             var gameId = Guid.NewGuid().ToString().Substring(0,5);
-            using (var writer = new StreamWriter($"GameResults-{gameId}.txt"))
+            using (var writer = new StreamWriter($"Results\\GameResults-{gameId}.txt"))
             {
                 var aviablePlayers = ChessPlayerHelper.GetPlayers().ToList();
                 Console.WriteLine($"Starting match with players: {aviablePlayers[0]} vs {aviablePlayers[0]}");
-                var gameRunner = new ChessGameTestScenario(aviablePlayers[0], aviablePlayers[0], writer, 1, true);
+                var gameRunner = new ChessGameTestScenario(aviablePlayers[0], aviablePlayers[0], writer, 3, true);
                 var runningGames = gameRunner.RunAsync();
                 Task.WaitAll(runningGames);
             }
