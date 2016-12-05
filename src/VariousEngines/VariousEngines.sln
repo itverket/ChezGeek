@@ -1,0 +1,103 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geek2k16.FindMoves", "Geek2k16.FindMoves\Geek2k16.FindMoves.csproj", "{D70A2966-BA18-4164-BCB6-58CF094F1589}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geek2k16.Entities", "Geek2k16.Entities\Geek2k16.Entities.csproj", "{0CE8F06E-0902-47CB-8123-F5D3286AB64B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geek2k16.Service", "Geek2k16.Service\Geek2k16.Service.csproj", "{70DE41F0-2BB7-4110-9B9D-58177D276FE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geek2k16.UI", "Geek2k16.UI\Geek2k16.UI.csproj", "{F6A1C848-578F-4B64-AEAF-E711B4EC7C51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geek2k16.AkkaTest", "Geek2k16.AkkaTest\Geek2k16.AkkaTest.csproj", "{6D620527-6924-4449-B36B-126B66E68E23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geek2k16.Actors", "Geek2k16.Actors\Geek2k16.Actors.csproj", "{12DD143B-E26D-42D2-8840-97CFC1D71C1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lighthouse", "Lighthouse\Lighthouse.csproj", "{87BE1ABF-1F59-41AB-A3CB-4B1E7E0B218A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geek2k16.Cluster", "Geek2k16.Cluster\Geek2k16.Cluster.csproj", "{77D22E14-B7D3-4ADF-993B-5E95C59B1048}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geek2K16.Service.Tests", "Geek2K16.Service.Tests\Geek2K16.Service.Tests.csproj", "{B52BC7F7-F39C-47DD-9998-E9BA00874CCE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D70A2966-BA18-4164-BCB6-58CF094F1589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D70A2966-BA18-4164-BCB6-58CF094F1589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D70A2966-BA18-4164-BCB6-58CF094F1589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D70A2966-BA18-4164-BCB6-58CF094F1589}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CE8F06E-0902-47CB-8123-F5D3286AB64B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CE8F06E-0902-47CB-8123-F5D3286AB64B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CE8F06E-0902-47CB-8123-F5D3286AB64B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CE8F06E-0902-47CB-8123-F5D3286AB64B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70DE41F0-2BB7-4110-9B9D-58177D276FE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70DE41F0-2BB7-4110-9B9D-58177D276FE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70DE41F0-2BB7-4110-9B9D-58177D276FE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70DE41F0-2BB7-4110-9B9D-58177D276FE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6A1C848-578F-4B64-AEAF-E711B4EC7C51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6A1C848-578F-4B64-AEAF-E711B4EC7C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6A1C848-578F-4B64-AEAF-E711B4EC7C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6A1C848-578F-4B64-AEAF-E711B4EC7C51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D620527-6924-4449-B36B-126B66E68E23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D620527-6924-4449-B36B-126B66E68E23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D620527-6924-4449-B36B-126B66E68E23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D620527-6924-4449-B36B-126B66E68E23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12DD143B-E26D-42D2-8840-97CFC1D71C1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12DD143B-E26D-42D2-8840-97CFC1D71C1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12DD143B-E26D-42D2-8840-97CFC1D71C1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12DD143B-E26D-42D2-8840-97CFC1D71C1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87BE1ABF-1F59-41AB-A3CB-4B1E7E0B218A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87BE1ABF-1F59-41AB-A3CB-4B1E7E0B218A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87BE1ABF-1F59-41AB-A3CB-4B1E7E0B218A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87BE1ABF-1F59-41AB-A3CB-4B1E7E0B218A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77D22E14-B7D3-4ADF-993B-5E95C59B1048}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77D22E14-B7D3-4ADF-993B-5E95C59B1048}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77D22E14-B7D3-4ADF-993B-5E95C59B1048}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77D22E14-B7D3-4ADF-993B-5E95C59B1048}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B52BC7F7-F39C-47DD-9998-E9BA00874CCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B52BC7F7-F39C-47DD-9998-E9BA00874CCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B52BC7F7-F39C-47DD-9998-E9BA00874CCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B52BC7F7-F39C-47DD-9998-E9BA00874CCE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 10
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://kybermalk.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Geek2k16.FindMoves\\Geek2k16.FindMoves.csproj
+		SccProjectName1 = Geek2k16.FindMoves
+		SccLocalPath1 = Geek2k16.FindMoves
+		SccProjectUniqueName2 = Geek2k16.Entities\\Geek2k16.Entities.csproj
+		SccProjectName2 = Geek2k16.Entities
+		SccLocalPath2 = Geek2k16.Entities
+		SccProjectUniqueName3 = Geek2k16.Service\\Geek2k16.Service.csproj
+		SccProjectName3 = Geek2k16.Service
+		SccLocalPath3 = Geek2k16.Service
+		SccProjectUniqueName4 = Geek2k16.UI\\Geek2k16.UI.csproj
+		SccProjectName4 = Geek2k16.UI
+		SccLocalPath4 = Geek2k16.UI
+		SccProjectUniqueName5 = Geek2k16.AkkaTest\\Geek2k16.AkkaTest.csproj
+		SccProjectName5 = Geek2k16.AkkaTest
+		SccLocalPath5 = Geek2k16.AkkaTest
+		SccProjectUniqueName6 = Geek2k16.Actors\\Geek2k16.Actors.csproj
+		SccProjectName6 = Geek2k16.Actors
+		SccLocalPath6 = Geek2k16.Actors
+		SccProjectUniqueName7 = Lighthouse\\Lighthouse.csproj
+		SccProjectName7 = Lighthouse
+		SccLocalPath7 = Lighthouse
+		SccProjectUniqueName8 = Geek2k16.Cluster\\Geek2k16.Cluster.csproj
+		SccProjectName8 = Geek2k16.Cluster
+		SccLocalPath8 = Geek2k16.Cluster
+		SccProjectUniqueName9 = Geek2K16.Service.Tests\\Geek2K16.Service.Tests.csproj
+		SccProjectName9 = Geek2K16.Service.Tests
+		SccLocalPath9 = Geek2K16.Service.Tests
+	EndGlobalSection
+EndGlobal

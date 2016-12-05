@@ -1,0 +1,14 @@
+﻿<Window x:Class="Geek2k16.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Geek2k16.UI"
+        xmlns:userControls="clr-namespace:Geek2k16.UI.UserControls"
+        mc:Ignorable="d"
+        Title="Kjess" Height="640" Width="640
+        " Icon="Resources/Images/king_black.png">
+    <Grid>
+        <userControls:ChessboardUserControl HorizontalAlignment="Center" Height="600" Width="480" Loaded="ChessboardUserControl_Loaded" />
+    </Grid>
+</Window>
